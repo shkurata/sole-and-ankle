@@ -36,6 +36,7 @@ const ShoeCard = ({
       <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
+          {/* Composition can be more appropriate here, but... */}
           <Variant variant={variant}>
             {variant === "new-release" ? "Just Released!" : "Sale"}
           </Variant>
@@ -59,10 +60,13 @@ const Variant = styled.span`
     p.variant === "new-release" ? COLORS.secondary : COLORS.primary};
   position: absolute;
   color: ${COLORS.white};
-  font-size: ${18 / 22}rem;};
+  font-size: ${14 / 18}rem;
+  font-weight: ${WEIGHTS.bold};
   top: 12px;
   right: -4px;
-  padding: 7px 9px;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 10px;
   border-radius: 2px;
   display: ${(p) => p.variant === "default" && "none"};
 `;
@@ -72,10 +76,7 @@ const Link = styled.a`
   color: inherit;
 `;
 
-const Wrapper = styled.article`
-  width: 340px;
-  padding-bottom: 32px;
-`;
+const Wrapper = styled.article``;
 
 const ImageWrapper = styled.div`
   position: relative;
